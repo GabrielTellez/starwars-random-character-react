@@ -38,8 +38,13 @@ class StarWars extends React.Component {
           <div>
             <h1>{this.state.name}</h1>
             <img src={this.state.image} alt={this.state.name} height="300" />
-            <p>{this.state.height} cm</p>
-            {this.state.homeworld && <p>Homeworld: {this.state.homeworld}</p>}
+            <p>Height: {this.state.height} m</p>
+            {this.state.homeworld && (
+              <p>
+                Homeworld:
+                <span className="capitalize"> {this.state.homeworld}</span>
+              </p>
+            )}
           </div>
         )}
         <button onClick={() => this.getNewCharacter()} type="button" className="btn">
